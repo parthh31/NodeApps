@@ -1,0 +1,26 @@
+<form name="f1" method="post">
+<select id="cmb" onchange="changeme()">
+    <%data.forEach(cat=>{%>
+        <option value="<%= cat._id%>"><%= cat.catname%></option>
+    <%});%>
+</select>
+<div id="prolist">
+
+</form>
+<script>
+function changeme()
+{
+    var id=document.getElementById('cmb').value;
+    alert(id);
+    '<% prod.forEach(p=>{%>';
+    var proname='<%= p.productname%>';
+    var category='<%= p.category%>';
+    var proprice='<%= p.productprice%>';
+    if(id==category)
+    {
+        document.getElementById('prolist').value=proname+"  "+category+"    "+proprice;
+    }
+    '<%});%>'
+    
+}
+</script>

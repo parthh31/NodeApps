@@ -1,0 +1,26 @@
+<html>
+    <body>
+        <form name="f1" method="post" action="/AddProduct">
+            Product Name:
+            <input type="text" name="productname">
+            <br>
+            Product Price:
+            <input type="text" name="productprice">
+            <br>
+            Category
+            <select name="catcombo">
+                <option>
+                    Category
+                </option>
+                <% cats.forEach(Category=>{%>
+                <option value="<%= Category._id %>">
+                    <%= Category.cat_name %>
+                </option>
+                <% });%>
+            </select>
+            <br>
+            <input type="submit" value="submit" name="submit">
+        </form>
+    </body>
+
+</html>
